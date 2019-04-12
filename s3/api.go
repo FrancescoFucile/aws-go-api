@@ -28,7 +28,7 @@ func LocalSession() *session.Session {
 }
 
 // Get executes a download from S3.
-func (s *Bucket) Get(key string, data []byte) (out []byte, err error) {
+func (s *Bucket) Get(key string) (out []byte, err error) {
 	input := &s3.GetObjectInput{
 		Bucket: aws.String(s.Name),
 		Key:    aws.String(key),
